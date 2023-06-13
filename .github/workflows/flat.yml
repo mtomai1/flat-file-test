@@ -17,7 +17,7 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v2
       - name: Fetch data
-        uses: githubocto/flat@v3
+        uses: githubocto/flat@v3.4.0
         with:
           sql_connstring: ${{ secrets.FLAT_9340AB_CONNSTRING }}
           sql_queryfile: team_query.sql
