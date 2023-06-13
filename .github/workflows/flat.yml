@@ -6,7 +6,6 @@ on:
   push:
     paths:
       - .github/workflows/flat.yml
-      - team_query.sql
 jobs:
   scheduled:
     runs-on: ubuntu-latest
@@ -20,6 +19,6 @@ jobs:
       - name: Fetch data
         uses: githubocto/flat@v3
         with:
-          sql_connstring: ${{secrets.DBSECRET}}
+          sql_connstring: ${{ secrets.FLAT_9340AB_CONNSTRING }}
           sql_queryfile: team_query.sql
           downloaded_filename: team-core.csv
