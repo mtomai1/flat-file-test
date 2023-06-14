@@ -8,7 +8,7 @@ const year = date_ob.getFullYear();
 
 const remappedArray = [];
 
-for (const item of data) {
+for (const item of json) {
     const userName = item.user_name; 
     const surnaName = item.surnaname; 
     const yearOfWork = year - item.recruitment_year; 
