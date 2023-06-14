@@ -3,6 +3,7 @@ import { readJson, writeJson} from 'https://deno.land/x/jsonfile/mod.ts'
 const filename = Deno.args[0] 
 const json = await readJson(filename)
 console.log(json)
+const date_ob = new Date();
 
 // Step 2: Filter specific data we want to keep and write to a new JSON file
 let year = date_ob.getFullYear();
