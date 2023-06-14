@@ -13,11 +13,11 @@ jobs:
       - name: Setup deno
         uses: denoland/setup-deno@main
         with:
-          deno-version: v1.10.x
+          deno-version: v1.x
       - name: Check out repo
         uses: actions/checkout@v3
       - name: Fetch data
-        uses: githubocto/flat@v3.4.0
+        uses: githubocto/flat@mr/node16
         with:
           sql_connstring: ${{ secrets.FLAT_9340AB_CONNSTRING }}
           sql_queryfile: team_query.sql
