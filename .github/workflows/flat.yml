@@ -6,6 +6,7 @@ on:
   push:
     paths:
       - .github/workflows/flat.yml
+      - team_query.sql
 jobs:
   scheduled:
     runs-on: ubuntu-latest
@@ -21,4 +22,4 @@ jobs:
         with:
           sql_connstring: ${{ secrets.FLAT_9340AB_CONNSTRING }}
           sql_queryfile: team_query.sql
-          downloaded_filename: team-core.csv
+          downloaded_filename: team-core.json
