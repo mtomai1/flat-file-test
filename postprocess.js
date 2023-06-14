@@ -1,7 +1,7 @@
-import { readJSON, writeJSON} from 'https://deno.land/x/jsonfile/mod.ts' 
+import { readJson, writeJson} from 'https://deno.land/x/jsonfile/mod.ts' 
 
 const filename = Deno.args[0] 
-const json = await readJSON(filename)
+const json = await readJson(filename)
 console.log(json)
 
 // Step 2: Filter specific data we want to keep and write to a new JSON file
@@ -20,5 +20,5 @@ const data = {
 
 // Step 3. Write a new JSON file with our filtered data
 const newFilename = `team-core-postprocessed.json` // name of a new file to be saved
-await writeJSON(newFilename, data) // create a new JSON file with just the Bitcoin price
+await writeJson(newFilename, data) // create a new JSON file with just the Bitcoin price
 console.log("Wrote a post process file")
