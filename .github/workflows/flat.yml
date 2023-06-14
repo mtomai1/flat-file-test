@@ -22,4 +22,5 @@ jobs:
         with:
           sql_connstring: ${{ secrets.FLAT_9340AB_CONNSTRING }}
           sql_queryfile: team_query.sql
-          downloaded_filename: team-core.json
+          downloaded_filename: team-core.csv
+          postprocess: postprocess.js
