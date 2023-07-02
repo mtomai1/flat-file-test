@@ -1,26 +1,26 @@
-name: data
-on:
-  schedule:
-    - cron: 0 0 * * *
-  workflow_dispatch: {}
-  push:
-    paths:
-      - .github/workflows/flat.yml
-      - team_query.sql
-jobs:
-  scheduled:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Setup deno
-        uses: denoland/setup-deno@main
-        with:
-          deno-version: v1.x
-      - name: Check out repo
-        uses: actions/checkout@v3
-      - name: Fetch data
-        uses: githubocto/flat@mr/node16
-        with:
-          sql_connstring: ${{ secrets.FLAT_9340AB_CONNSTRING }}
-          sql_queryfile: team_query.sql
-          downloaded_filename: team-core.json
-          postprocess: postprocess.js
+#name: data
+#on:
+#  schedule:
+#    - cron: 0 0 * * *
+#  workflow_dispatch: {}
+#  push:
+#    paths:
+#      - .github/workflows/flat.yml
+#      - team_query.sql
+#jobs:
+#  scheduled:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Setup deno
+#        uses: denoland/setup-deno@main
+#        with:
+#          deno-version: v1.x
+#      - name: Check out repo
+#        uses: actions/checkout@v3
+#      - name: Fetch data
+#        uses: githubocto/flat@mr/node16
+#        with:
+#          sql_connstring: ${{ secrets.FLAT_9340AB_CONNSTRING }}
+#          sql_queryfile: team_query.sql
+#          downloaded_filename: team-core.json
+#          postprocess: postprocess.js
